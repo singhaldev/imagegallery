@@ -1,38 +1,397 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Pattaya&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav {
+  display: flex;
+  padding-top: 30px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav .logo {
+  font-size: 30px;
+  line-height: 42px;
+  font-family: Pattaya;
+  white-space: nowrap;
+  margin-left: 1em;
+  cursor: pointer;
+  color: #333333;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav .search-input {
+  position: relative;
+  margin-left: 4em;
+}
+
+.nav input {
+  background: #fafafa;
+  border: 1px solid #ececec;
+  box-shadow: inset 0px 4px 19px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  min-width: 200px;
+  width: 350px;
+  height: 43px;
+  padding-left: 40px;
+}
+
+#searchbar::placeholder {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #c4c4c4;
+}
+
+#searchbar:-ms-input-placeholder {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #c4c4c4;
+}
+
+#searchbar::-ms-input-placeholder {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #c4c4c4;
+}
+
+.nav img {
+  width: 18px;
+  height: 17px;
+  position: absolute;
+  top: 12px;
+  left: 13px;
+}
+
+.nav .nav-links {
+  margin-left: 25px;
+}
+
+.nav .nav-links-mob {
+  display: none;
+}
+
+.nav .nav-links a {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  font-style: normal;
+  color: #333333;
+  margin-right: 1.5em;
+}
+
+.nav .nav-links a:hover {
+  color: #ff5a5f;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.theme-toggle p {
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: bold;
+  font-style: normal;
+  color: #333333;
+  margin-right: 10px;
+}
+
+.nav .black-search-logo {
+  position: absolute;
+  top: 16px;
+  right: 60px;
+  width: 22px;
+  height: 18px;
+  display: none;
+}
+
+.nav .menu-logo {
+  display: none;
+}
+
+.bg-container {
+  margin-top: 25px;
+}
+
+.bg-container .bg-main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.bg-container .bg-main .bg-heading {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-align: center;
+}
+.bg-container .bg-main .bg-details {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #c4c4c4;
+  padding: 1rem 0;
+  text-align: center;
+}
+.bg-container .bg-main .bg-input {
+  position: relative;
+  margin: 0 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.bg-container .bg-main .bg-input-mob {
+  position: relative;
+  margin: 0 2em;
+  display: none;
+}
+
+.bg-container .bg-main img {
+  position: absolute;
+  width: 17px;
+  height: 18px;
+  left: 20px;
+  top: 18px;
+}
+
+.bg-container .bg-main input {
+  width: 808px;
+  height: 54px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 0px solid #ececec;
+  padding: 0 2em 0 4em;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 40px 20px 0 20px;
+}
+
+.container .heading {
+  width: 50%;
+  padding-bottom: 50px;
+}
+.container .heading h3 {
+  font-size: 3em;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #222;
+}
+
+.container .heading h3 span {
+  font-weight: 100;
+}
+
+.container .btn {
+  margin: 40px 0 70px 0;
+  background: #222;
+  padding: 15px 40px;
+  border-radius: 5px;
+}
+
+.container .btn a {
+  color: #fff;
+  font-size: 1.2em;
+  text-decoration: none;
+  font-weight: bolder;
+  letter-spacing: 3px;
+}
+
+.searchTopic {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #4f4f4f;
+  padding: 0.75em 5em 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container .box {
+    padding: 1em 5em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .theme-toggle p {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .searchTopic {
+    padding: 0.75em 3em 0;
+  }
+  .theme-toggle {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .nav {
+    justify-content: left;
+    padding-top: 15px;
+  }
+  .nav .logo {
+    font-size: 24px;
+    line-height: 42px;
+    white-space: nowrap;
+  }
+
+  .nav .nav-links {
+    display: none;
+  }
+
+  .nav .nav-links-mob {
+    display: block;
+    width: 100%;
+    background: linear-gradient(#ff54a2, #ff575a);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 2;
+    text-align: right;
+  }
+  .nav .nav-links-mob a {
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    font-style: normal;
+    margin-right: 1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 8px;
+    color: #fff;
+  }
+  .nav .nav-links a:hover {
+    color: #000;
+  }
+
+  .nav .menu-logo {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 30px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav .menu-logo img {
+    width: 24px;
+    height: 24px;
+  }
+
+  #menuList {
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  .bg-container .bg-main input {
+    width: 550px;
+  }
+
+  .bg-container .bg-main .bg-heading {
+    font-size: 24px;
+    line-height: 29px;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .bg-container .bg-main .bg-details {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .container .box {
+    padding: 1em 2em;
+  }
+
+  .theme-toggle {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .searchTopic {
+    padding: 0.75em 1.5em 0;
+  }
+
+  .nav .search-input {
+    display: none;
+  }
+
+  .nav .black-search-logo {
+    display: block;
+  }
+
+  .nav {
+    padding-top: 15px;
+  }
+  .bg-container {
+    margin-top: 18px;
+  }
+
+  .container .heading {
+    width: 100%;
+  }
+  .container .heading h3 {
+    font-size: 1em;
+  }
+
+  .bg-container .bg-main .bg-details {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .bg-container .bg-main .bg-input {
+    display: none;
+  }
+
+  .bg-container .bg-main .bg-input-mob {
+    display: block;
+  }
+  .bg-container .bg-main .bg-input-mob input {
+    width: 325px;
+    padding: 0 3em;
+  }
+  .bg-container .bg-main .bg-input-mob input::placeholder {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .searchTopic {
+    padding: 0.5em 1.5em;
+  }
+
+  .bg-container .bg-main .bg-input-mob input {
+    width: 280px;
+  }
+  .bg-container .bg-main .bg-input-mob input::placeholder {
+    font-size: 11px;
   }
 }
