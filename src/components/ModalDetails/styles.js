@@ -72,10 +72,6 @@ export const ModalLikeText = styled(Text)`
   color: #858484;
 `;
 
-export const ModalDetailsMob = styled(Flex)`
-  display: none;
-`;
-
 export const DownloadBtn = styled(Button)`
   width: 150px;
   height: 40px;

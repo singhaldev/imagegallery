@@ -10,7 +10,6 @@ import {
   SocialMediaLinks,
   ModalLikeIcon,
   ModalLikeText,
-  ModalDetailsMob,
   DownloadBtn,
 } from './styles';
 
@@ -95,11 +94,7 @@ const ModalDetails = ({ clickedImage }) => {
         </Flex>
       </Flex>
 
-      <ModalDetailsMob
-        alignItems="center"
-        mx={5}
-        display={{ base: 'flex', sm: 'none' }}
-      >
+      <Flex alignItems="center" mx={5} display={{ base: 'flex', sm: 'none' }}>
         <Flex flex={1} my={4}>
           {clickedImage.user.social.instagram_username && (
             <Flex>
@@ -119,15 +114,10 @@ const ModalDetails = ({ clickedImage }) => {
           )}
         </Flex>
         <Flex alignItems="center" mx={3}>
-          <Image
-            className="modal-like"
-            src="images/like.svg"
-            alt="like"
-            mr={1}
-          />
+          <ModalLikeIcon src="images/like.svg" alt="like" mr={1} />
           <ModalLikeText>{clickedImage.likes}</ModalLikeText>
         </Flex>
-      </ModalDetailsMob>
+      </Flex>
       <Text mx={6} my={2}>
         {clickedImage.description}
       </Text>
