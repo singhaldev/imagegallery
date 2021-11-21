@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Box, Flex, Text, Image, Button } from '@chakra-ui/react';
+import { Box, Text, Image, Button } from '@chakra-ui/react';
 
 export const ModalDp = styled(Image)`
   width: 56px;
