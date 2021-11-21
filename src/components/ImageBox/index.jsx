@@ -18,6 +18,7 @@ const ImageBox = ({ unsplashPhotos }) => {
         {Array.isArray(unsplashPhotos) &&
           unsplashPhotos?.map((photo) => (
             <ImgCard
+              key={photo.id}
               onClick={() => {
                 onOpen();
                 setClickedImage(photo);
