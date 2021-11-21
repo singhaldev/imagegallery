@@ -25,11 +25,10 @@ function App() {
   }, [count]);
 
   useEffect(() => {
+    const SearchUrl = `https://api.unsplash.com/search/photos/?client_id=${process.env.REACT_APP_API_KEY}&&query=${enterValue}`;
     if (enterValue) {
       async function apiHit() {
-        const { data } = await axios.get(
-          `https://api.unsplash.com/search/photos/?client_id=y2Jsp4YmlQmzwtjJk91jCYRFoBqZA8WcBLr0qppXi3Q&&query=${enterValue}`
-        );
+        const { data } = await axios.get(SearchUrl);
         if (data.total === 0) {
           toast.error('No Images found.');
         } else {
