@@ -3,16 +3,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './App.css';
 import ImageBox from './components/ImageBox';
-import { Switch, useColorMode } from '@chakra-ui/react';
+import { useColorMode } from '@chakra-ui/react';
 import toast, { Toaster } from 'react-hot-toast';
+import Navbar from './components/Navbar';
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [unsplashPhotos, setUnsplashPhotos] = useState('');
   const [enterValue, setEnterValue] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(true);
   const [count, setCount] = useState(1);
-  const searchInput = useRef(null);
   const bgSearchInput = useRef(null);
   const bgSearchInputMob = useRef(null);
   useEffect(() => {
@@ -44,73 +43,14 @@ function App() {
   return (
     <>
       <Toaster position="top-right" />
-      <div className="nav">
-        <div
-          className="logo"
-          onClick={() => {
-            setIsSearchOpen(true);
-            searchInput.current.value = '';
-            setEnterValue('');
-            setCount((prevCount) => prevCount + 1);
-          }}
-        >
-          Image Gallery
-        </div>
-        <div className="search-input">
-          <input
-            type="text"
-            placeholder="Search Images here"
-            id="searchbar"
-            ref={searchInput}
-            onKeyDown={(e) => {
-              if (e.keyCode === 13) {
-                setEnterValue(searchInput.current.value);
-              }
-            }}
-          />
-          <img src="images/search-logo.svg" alt="logo" />
-        </div>
-        <div className="nav-links">
-          <a href="#">Explore</a>
-          <a href="#">Collection</a>
-          <a href="#">Community</a>
-        </div>
-        <div
-          className="nav-links-mob"
-          id="menuList"
-          style={{ height: isMenuOpen ? '90px' : '0px' }}
-        >
-          <a href="#">Explore</a>
-          <a href="#">Collection</a>
-          <a href="#">Community</a>
-        </div>
-        <div className="theme-toggle">
-          <p>Dark Mode</p>
-          <Switch size="md" onChange={(e) => toggleColorMode()} />
-        </div>
-        <div className="black-search-logo">
-          <img
-            src="images/black-search-logo.svg"
-            alt="search-logo"
-            style={{
-              cursor: 'pointer',
-            }}
-            onClick={() => {
-              setIsSearchOpen(true);
-              setTimeout(() => {
-                bgSearchInputMob?.current?.focus();
-              }, 500);
-            }}
-          />
-        </div>
-        <div className="menu-logo">
-          <img
-            src="images/menu-logo.svg"
-            alt="menu-logo"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          />
-        </div>
-      </div>
+      <Navbar
+        setIsSearchOpen={setIsSearchOpen}
+        setEnterValue={setEnterValue}
+        setCount={setCount}
+        toggleColorMode={toggleColorMode}
+        bgSearchInputMob={bgSearchInputMob}
+      />
+
       {isSearchOpen ? (
         <div
           className="bg-container"
