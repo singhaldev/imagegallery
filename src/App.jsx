@@ -16,7 +16,7 @@ function App() {
   const bgSearchInput = useRef(null);
   const bgSearchInputMob = useRef(null);
   useEffect(() => {
-    const Url = `https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_API_KEY}&&per_page=30`;
+    const Url = `${process.env.REACT_APP_APP_URL}/photos/?client_id=${process.env.REACT_APP_API_KEY}&&per_page=30`;
     async function apiHit() {
       const { data } = await axios.get(Url);
       setUnsplashPhotos(data);
@@ -25,7 +25,7 @@ function App() {
   }, [count]);
 
   useEffect(() => {
-    const SearchUrl = `https://api.unsplash.com/search/photos/?client_id=${process.env.REACT_APP_API_KEY}&&query=${enterValue}`;
+    const SearchUrl = `${process.env.REACT_APP_APP_URL}/search/photos/?client_id=${process.env.REACT_APP_API_KEY}&&query=${enterValue}`;
     if (enterValue) {
       async function apiHit() {
         const { data } = await axios.get(SearchUrl);
